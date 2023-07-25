@@ -1,58 +1,77 @@
-  
-  <script>
-    
-const menu = document.querySelector(".menu");
-const menuItems = document.querySelectorAll(".menuItem");
-const hamburger = document.querySelector(".hamburger");
-const closeIcon = document.querySelector(".closeIcon");
-const menuIcon = document.querySelector(".menuIcon");
+<script>
+  const menu = document.querySelector(".menu");
+  const menuItems = document.querySelectorAll(".menuItem");
+  const hamburger = document.querySelector(".hamburger");
+  const closeIcon = document.querySelector(".closeIcon");
+  const menuIcon = document.querySelector(".menuIcon");
 
-function toggleMenu() {
-  if (menu?.classList.contains("showMenu")) {
-    menu.classList.remove("showMenu");
-    closeIcon.style.display = "none";
-    menuIcon.style.display = "block";
-  } else {
-    menu?.classList.add("showMenu");
-    closeIcon.style.display = "block";
-    menuIcon.style.display = "none";
+  function toggleMenu() {
+    if (menu?.classList.contains("showMenu")) {
+      menu.classList.remove("showMenu");
+      closeIcon.style.display = "none";
+      menuIcon.style.display = "block";
+    } else {
+      menu?.classList.add("showMenu");
+      closeIcon.style.display = "block";
+      menuIcon.style.display = "none";
+    }
   }
-}
 
-hamburger.addEventListener("click", toggleMenu);
+  hamburger.addEventListener("click", toggleMenu);
 
-menuItems.forEach(function (menuItem) {
-  menuItem.addEventListener("click", toggleMenu);
-
-});
+  menuItems.forEach(function (menuItem) {
+    menuItem.addEventListener("click", toggleMenu);
+  });
 </script>
-  
-  
-  <ul class="menu">
-    <li><a class="menuItem" href="/Cartadia" >DÍA</a></li>
-    <li><a class="menuItem" href="#">NOCHE</a></li>
-    <li><a class="menuItem" href="#">BRUNCH</a></li>
-    <li><a class="menuItem" href="#">VINOS</a></li>
-    <li></li>
-    <li><a class="menuItem" href="#">ALMUERZOS Y EVENTOS</a></li>
-    <li><a class="menuItem" href="#">REGALOS</a></li>
-    <li></li>
-    <li><a class="menuItem" href="#">MAIL</a></li>
-    <li><a class="menuItem" href="#">INSTAGRAM</a></li>
-    <li><a class="menuItem" href="#">WHATSAPP</a></li>
-  </ul>
-  <button class="hamburger">
-    <i class="menuIcon material-icons">menu</i>
-    <i class="closeIcon material-icons">close</i>
-  </button>
-  <style>
 
+<ul class="menu">
+  <li>
+    <a
+      class="menuItem"
+      target="_blank"
+      href="../../public/assets/pdfs/CartaDia.pdf">DÍA</a
+    >
+  </li>
+  <li>
+    <a
+      class="menuItem"
+      target="_blank"
+      href="../../public/assets/pdfs/CartaNoche.pdf">NOCHE</a
+    >
+  </li>
+  <li>
+    <a
+      class="menuItem"
+      target="_blank"
+      href="../../public/assets/pdfs/CartaDia.pdf">BRUNCH</a
+    >
+  </li>
+  <li>
+    <a
+      class="menuItem"
+      target="_blank"
+      href="../../public/assets/pdfs/CartaVinos.pdf">VINOS</a
+    >
+  </li>
+  <li></li>
+  <li><a class="menuItem" href="#">ALMUERZOS Y EVENTOS</a></li>
+  <li><a class="menuItem" href="#">REGALOS</a></li>
+  <li></li>
+  <li><a class="menuItem" href="#">MAIL</a></li>
+  <li><a class="menuItem" href="#">INSTAGRAM</a></li>
+  <li><a class="menuItem" href="#">WHATSAPP</a></li>
+</ul>
+<button class="hamburger">
+  <i class="menuIcon material-icons">menu</i>
+  <i class="closeIcon material-icons">close</i>
+</button>
+<style>
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   .menuItem {
     display: block;
     margin: 10px 4rem;
@@ -60,11 +79,11 @@ menuItems.forEach(function (menuItem) {
     color: white;
     text-decoration: none;
   }
-  
+
   .menuItem:hover {
-    color:blueviolet
+    color: blueviolet;
   }
-  
+
   .hamburger {
     position: fixed;
     z-index: 100;
@@ -75,11 +94,11 @@ menuItems.forEach(function (menuItem) {
     background: white;
     cursor: pointer;
   }
-  
+
   .closeIcon {
     display: none;
   }
-  
+
   .menu {
     position: fixed;
     transform: translateY(-100%);
@@ -90,15 +109,14 @@ menuItems.forEach(function (menuItem) {
     bottom: 0;
     z-index: 99;
     background: black;
-    opacity:0.7;
+    opacity: 0.7;
     color: white;
     list-style: none;
     padding-top: 4rem;
     text-align: ;
   }
-  
+
   .showMenu {
     transform: translateY(0);
   }
-
 </style>
