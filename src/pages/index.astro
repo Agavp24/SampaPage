@@ -22,7 +22,7 @@ import MenuHamb from "../components/MenuHamb.astro";
     <p>SAMPA es un restaurante.</p>
     <p>
       Partimos de la parrilla y el mundo vejetal, de hongos y las algas en
-      conjunto con recetas y técnicas tradicionales.
+      conjunto con recetas y técnicas <tradicionales class="a"></tradicionales>
     </p>
     <p>
       No importa el origen de la cocina mientras exista una historia que nos
@@ -41,18 +41,20 @@ import MenuHamb from "../components/MenuHamb.astro";
 </div>
 
 <Layout title="Introduccion">
-  <main class="image-container-2">
+  <main class="image-container-3">
     <h2>ALMUERZOS Y EVENTOS</h2>
     <h3>~</h3>
     <h4>OPCIONES PARA UN EVENTO PRIVADO</h4>
     <div class="boton-ver-mas">
-      <a>VER MAS</a>
+      <a href="/Eventos">VER MAS</a>
     </div>
   </main>
 </Layout>
 <Layout title="Almuerzos">
-  <main class="image-container-3">
+  <main class="image-container-2">
     <h2>REGALOS</h2>
+    <h3>~</h3>
+    <h4>PROXIMAMENTE</h4>
   </main>
 </Layout>
 <Layout title="Eventos">
@@ -126,6 +128,37 @@ import MenuHamb from "../components/MenuHamb.astro";
     margin-left: 2rem;
   }
 
+  .boton-ver-mas {
+    margin-top: 5rem;
+    background-color: black;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    max-width: none;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100px;
+  }
+
+  .boton-ver-mas a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .boton-ver-mas :hover,
+  .boton-ver-mas :focus {
+    opacity: 0.75;
+  }
+
   .link-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
@@ -153,5 +186,11 @@ import MenuHamb from "../components/MenuHamb.astro";
     background-position: center;
     height: 50vh;
     width: 100%;
+  }
+
+  @media (min-width: 751px) {
+    main {
+      max-width: 130ch;
+    }
   }
 </style>

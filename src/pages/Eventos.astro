@@ -1,28 +1,57 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import MenuHamb from "../components/MenuHamb.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-    </ul>
+  <MenuHamb />
+  <main class="image-container-3">
+    <h1>ALMUERZOS Y EVENTOS</h1>
+    <div class="card">
+      <h2>SALÓN EXCLUSIVO</h2>
+      <p>
+        Almuerzo por pasos de la historia de SAMPA. Ideal para fechas
+        especiales, almuerzo de negocios o eventos corporativos.
+      </p>
+      <h2>~</h2>
+      <p>
+        10 PASOS (opcional con degustación de vinos federales)<br /> &gt; de 6 a
+        10 personas | <strong>más información</strong>
+      </p>
+
+      <h2>11AM: VERMUT</h2>
+      <p>
+        Encuentro matutino para celebrar cualquier tipo de ocasión. Salón y
+        patio despejados para circular disfrutando de pequeños bocados que pasan
+        en bandeja
+      </p>
+      <h2>~</h2>
+      <p>
+        Vermut y sodas frutales libres + 6 (seis) opciones de tapas<br /> &gt; hasta
+        30 personas | <strong>más información</strong>
+      </p>
+
+      <h2>INFORMAL</h2>
+      <p>Almuerzo a la carta con atención exclusiva en el salón</p>
+      <h2>~</h2>
+      <p>&gt; de 8 a 12 personas | <strong>más información</strong></p>
+
+      <h2>FESTEJO</h2>
+      <p>
+        Servicio de catering para tener a SAMPA en el sitio que vos elijas | más
+        información
+      </p>
+
+      <p>
+        Para consultarnos por cualquier tipo de evento, podes enviarnos un mail
+        con el boton de abajo!
+      </p>
+
+      <div class="boton-ver-mas">
+        <a href="/Mail">clickeamé</a>
+      </div>
+    </div>
   </main>
 </Layout>
 
@@ -33,40 +62,76 @@ import Card from "../components/Card.astro";
     max-width: 80ch;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin: 0;
+    color: white;
+    margin-top: 2rem;
   }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
+
+  .card {
+    padding: 1rem 1rem;
     background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
+    margin-top: 3rem;
   }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
+
+  .card p {
+    margin: 0.5rem 0rem;
   }
-  .instructions strong {
-    color: rgb(var(--accent));
+
+  .card h2 {
+    margin: 0;
+    font-size: large;
+    font-weight: 800;
   }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
+
+  .card h3 {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .image-container-3 {
+    background-image: url(../../public/assets/multimedia/IMG_0400.JPG);
+    background-size: cover;
+    background-position: center;
+    height: 35vh;
+    width: 100%;
+  }
+  .boton-ver-mas {
+    margin-top: 5rem;
+    background-color: black;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    max-width: none;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100px;
+  }
+
+  .boton-ver-mas :hover,
+  .boton-ver-mas :focus {
+    opacity: 0.75;
+  }
+  @media (min-width: 751px) {
+    .card {
+      margin-top: 10rem;
+    }
+    main {
+      max-width: 130ch;
+    }
   }
 </style>
