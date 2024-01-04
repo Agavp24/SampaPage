@@ -7,7 +7,7 @@ import MenuHamb from "../components/MenuHamb.astro";
 <Layout title="Home">
   <MenuHamb />
   <main class="image-container">
-    <h1>SAMPA <span>99V</span></h1>
+    <h1>SAMPA <span class="noventi-v">99%v</span></h1>
     <div class="localizacion">
       <h3>SCALABRINI ORTIZ 769</h3>
       <h3>VILLA CRESPO.</h3>
@@ -39,27 +39,46 @@ import MenuHamb from "../components/MenuHamb.astro";
     trabajar en equipo.
   </div>
 </div>
-
-<Layout title="Introduccion">
-  <main class="image-container-3">
-    <h2>ALMUERZOS Y EVENTOS</h2>
-    <h3>~</h3>
-    <h4>OPCIONES PARA UN EVENTO PRIVADO</h4>
-    <div class="boton-ver-mas">
-      <a href="/Eventos">VER MAS</a>
-    </div>
-  </main>
-</Layout>
-<Layout title="Almuerzos">
-  <main class="image-container-2">
-    <h2>REGALOS</h2>
-    <h3>~</h3>
-    <h4>PROXIMAMENTE</h4>
-  </main>
-</Layout>
+<div class="index-container">
+  <Layout title="Introduccion">
+    <main class="image-container-3">
+      <h2>ALMUERZOS Y EVENTOS</h2>
+      <h3>~</h3>
+      <h4>OPCIONES PARA UN EVENTO PRIVADO</h4>
+      <div class="boton-ver-mas">
+        <a href="/Eventos">VER MAS</a>
+      </div>
+    </main>
+  </Layout>
+  <Layout title="Almuerzos">
+    <main class="image-container-2">
+      <h2>REGALOS</h2>
+      <h3>~</h3>
+      <h4>PROXIMAMENTE</h4>
+    </main>
+  </Layout>
+</div>
 <Layout title="Eventos">
-  <main class="image-container">
-    <h2>SAMPA <span>99V</span></h2>
+  <main class="image-container-4">
+    <h1>SAMPA <span class="noventi-v">99%v</span></h1>
+    <div class="center-container">
+      <div class="icons-wrapper">
+        <a href="https://www.instagram.com/sampa99v">
+          <i class="fa fa-brands fa-instagram fa-2x" style="padding: 10px 10px"
+          ></i></a
+        >
+        <a href="https://goo.gl/maps/jm9aK9piJYvz1raR6">
+          <i class="fa fa-map-marker-alt fa-2x" style="padding: 10px 10px"
+          ></i></a
+        >
+        <a href="mailto:sampa99v@gmail.com"
+          ><i class="fa fa-envelope fa-2x" style="padding: 10px 10px"></i></a
+        >
+        <a href="https://wa.me/+5491151525425"
+          ><i class="fa fa-whatsapp fa-2x" style="padding: 10px 10px"></i></a
+        >
+      </div>
+    </div>
   </main>
 </Layout>
 
@@ -166,6 +185,13 @@ import MenuHamb from "../components/MenuHamb.astro";
     padding: 0;
   }
 
+  @media screen and (min-width: 600px) {
+    .index-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+  }
   .image-container {
     background-image: url(../../public/assets/multimedia/IMG_4592.JPG);
     background-size: cover;
@@ -188,9 +214,39 @@ import MenuHamb from "../components/MenuHamb.astro";
     width: 100%;
   }
 
+  .image-container-4 {
+    background-image: url(../../public/assets/multimedia/IMG_4592.JPG);
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+  }
+
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+  }
+
+  .icons-wrapper {
+    display: flex;
+  }
+  .icons-wrapper a {
+    color: #fff;
+    margin: 0 2rem;
+  }
+  .icons-wrapper i.fa {
+    font-size: 50px;
+  }
+
+  .noventi-v {
+    font-weight: 600;
+  }
+
   @media (min-width: 751px) {
     main {
-      max-width: 130ch;
+      max-width: 140ch;
     }
   }
 </style>

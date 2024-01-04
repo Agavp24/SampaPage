@@ -8,21 +8,20 @@
 
     const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
       subject
-    )}&body=Consulta de: ${name}%Numero de Telefono: ${phone}%Descripcion: ${encodeURIComponent(
+    )}&body=Hola soy : ${name}%Numero de Telefono: ${phone}%Descripcion: ${encodeURIComponent(
       description
     )}`;
     window.location.href = mailtoLink;
   }
 
-  const button = document.querySelector(".button-mail");
+  const button = document.getElementById("button");
   button.addEventListener("click", sendEmail);
 </script>
-
+<div class="image-container-3"></div>
 <form>
-  <h2>Envianos un mail y dejanos tu consulta</h2>
   <label for="subject">Tipo de Evento:</label>
   <select id="subject" name="recipient">
-    <option value="gonzodim@gmail.com">Salón Exclusivo</option>
+    <option value="Salón Exclusivo">Salón Exclusivo</option>
     <option value="sampa@gmail.com">Recipient 2</option>
     <option value="gonzodim@gmail.com">Recipient 3</option>
     <option value="gonzodim@gmail.com">Recipient 4</option>
@@ -41,52 +40,78 @@
   ></textarea>
   <br />
 
-  <button class="button-mail" type="button" onclick="">Send Email</button>
+  <button id="button" class="button-mail" type="button" onclick=""
+    >enviar</button
+  >
 </form>
 <style>
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f1f1f1;
-  }
-
-  .recipent {
-  }
-
-  .card {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    width: 400px;
+    margin: auto;
+    overflow: hidden;
   }
 
   form {
-    margin: 0;
+    padding: 1rem 1rem;
+    background-color: white;
+    margin-top: 3rem;
   }
 
-  form label,
-  form select,
-  form input,
-  form textarea {
+  label {
+    margin: 0;
+    font-size: large;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  form label {
     display: block;
     margin-bottom: 10px;
   }
-
-  .button-mail {
-    margin-top: 10px;
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  form textarea {
+    display: block;
+    margin-bottom: 10px;
+    height: 150px;
   }
 
-  .button-mail:hover {
-    background-color: #45a049;
+  form select,
+  form input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  .button-mail {
+    margin-top: 2rem;
+    background-color: black;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    max-width: none;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100px;
+  }
+
+  #button:hover {
+    transform: scale(1.2);
   }
 </style>
